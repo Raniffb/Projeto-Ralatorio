@@ -1,0 +1,81 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 100vh;
+  background-color: rgb(27,33,59);
+
+  .report-container {
+    width: 45%;
+    height: auto;
+    max-width: 800px;
+    margin: auto;
+    border: 5px solid rgb(38, 45, 71);
+    background-color: rgb(38, 45, 71);
+    padding: 60px;
+    border-radius: 30px;
+    font-family: Arial, sans-serif;
+    color: white;
+    box-sizing: border-box;
+    h2 {
+      text-align: center;
+      margin-block-end: 70px;
+      margin-top: auto;
+      font-size: 28px;
+    }
+
+    .filter-container {
+      display: grid;
+      flex-direction: column;
+      margin-top: 40px;
+      margin-left: 30px;
+
+      label {
+        margin: 13px 6px 80px;
+        font-size: larger;
+      }
+
+      p.calender {
+        margin-bottom: 5px;
+        padding: 50px;
+      }
+
+      button {
+        padding: auto;
+        background-color: #185ca5;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 8px;
+
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+    }
+  }
+}
+
+:host::ng-deep {
+  p-dropdown, .p-dropdown{
+    width: 120%;
+    left: 5px;
+    height: 45px;
+
+  }
+
+  p-calendar > .p-calendar > .p-datepicker-trigger {
+    background-color: white;
+    color: black;
+    border: #fff;
+  }
+  p-calendar > .p-calendar > .p-inputtext {
+    height: 45px;
+    max-width: 100%;
+  }
+  p-calendar, .p-calendar {
+    max-width: 100%;
+    width: 14vw;
+    height: auto;
+  }
+}
