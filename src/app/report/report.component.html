@@ -1,33 +1,32 @@
-<body style="display: flow-root;">
-  <div class="dateline" style="text-align: end; color: white; display: flex;">
-    <p style="width: 61%; text-align: end;">{{ currentDate | date: 'longDate' }}</p>
-    <p style="width: 50%; text-align: end; padding: 0vw 1vw 10vw 6vw;">{{ currentDate | date: 'shortTime' }}</p>
+<div class="background">
+  <div class="dateline">
+    <p class="longDate">{{ currentDate | date: 'longDate' }}</p>
+    <p class="shortTime">{{ currentDate | date: 'shortTime' }}</p>
   </div>
   <div class="report-container">
     <h2>Productivity Report</h2>
     <div class="filter-container flex">
-      <div class="flex justify-content-start" style="width: 43%; max-width: 52%;" >
+      <div class="flex justify-content-start">
         <label for="shift">Shift</label>
         <p-dropdown [options]="shiftOptions" [(ngModel)]="selectedShift" [showClear]="true" placeholder="Select shift"></p-dropdown>
       </div>
-      <div
-        class="flex flex-row">
-        <div style="display: flex;">
+      <div class="flex flex-row">
+        <div class="from">
           <label for="startDate">From</label>
           <p-calendar [(ngModel)]="startDate" [showIcon]="true"></p-calendar>
         </div>
-        <div style="display: flex;">
+        <div class="to">
           <label for="endDate">To</label>
           <p-calendar [(ngModel)]="endDate" [showIcon]="true" >
           </p-calendar>
         </div>
       </div>
-      <div style="width: 100%; display: flex; justify-content: center; align-items: center; margin-top: 20px;">
-        <button style="width: 40%; padding: 2%; font-family: Arial, Helvetica, sans-serif;" (click)="generateReport()" [disabled]="!reportForm.valid">
-          <i class="pi pi-copy" style="font-size: 2cap;"></i> Generate Report
+      <div class="generate">
+        <button (click)="generateReport()" [disabled]="!reportForm.valid">
+          <i class="pi pi-copy"></i> Generate Report
         </button>
       </div>
     </div>
   </div>
-</body>
+</div>
 

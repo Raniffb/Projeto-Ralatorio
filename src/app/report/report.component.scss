@@ -1,13 +1,28 @@
-body {
-  display: flex;
+.background {
+  display: flow-root;
   align-items: center;
   justify-content: center;
   margin: 0;
   height: 100vh;
   background-color: rgb(27,33,59);
 
+  .dateline{
+    text-align: end;
+    color: white;
+    display: flex;
+    .longDate{
+      width: 61%;
+      text-align: end;
+    }
+    .shortTime{
+      width: 50%;
+      text-align: end;
+      padding: 0vw 1vw 10vw 6vw;
+    }
+  }
+
   .report-container {
-    width: 45%;
+    width: 60%;
     height: auto;
     max-width: 800px;
     margin: auto;
@@ -36,21 +51,41 @@ body {
         font-size: larger;
       }
 
-      p.calender {
-        margin-bottom: 5px;
-        padding: 50px;
+      .justify-content-start{
+        width: 43%;
+        max-width: 52%;
+      }
+
+      .from{
+        display: flex;
+      }
+
+      .to{
+        display: flex;
       }
 
       button {
-        padding: auto;
         background-color: #185ca5;
         color: #fff;
         cursor: pointer;
         border-radius: 8px;
+        width: 40%;
+        padding: 2%;
+        font-family: Arial, Helvetica, sans-serif;
 
         &:hover {
           background-color: #0056b3;
         }
+        i{
+          font-size: 2cap;
+        }
+      }
+      .generate{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
       }
     }
   }
