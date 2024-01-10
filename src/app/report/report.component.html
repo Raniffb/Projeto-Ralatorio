@@ -1,32 +1,32 @@
 <div class="background">
   <div class="dateline">
     <p class="longDate">{{ currentDate | date: 'longDate' }}</p>
-    <p class="shortTime">{{ currentDate | date: 'shortTime' }}</p>
+    <!-- <p class="shortTime">{{ currentDate | date: 'shortTime' }}</p> -->
   </div>
   <div class="report-container">
     <h2>Productivity Report</h2>
-    <div class="filter-container flex">
-      <div class="flex justify-content-start">
-        <label for="shift">Shift</label>
-        <p-dropdown [options]="shiftOptions" [(ngModel)]="selectedShift" [showClear]="true" placeholder="Select shift"></p-dropdown>
-      </div>
-      <div class="flex flex-row">
-        <div class="from">
-          <label for="startDate">From</label>
-          <p-calendar [(ngModel)]="startDate" [showIcon]="true"></p-calendar>
+    <form [formGroup]="reportForm" (ngSubmit)="generateReport()">
+      <div class="filter-container flex">
+        <div class="flex justify-content-center">
+          <label for="shift">Shift</label>
+          <p-dropdown formControlName="selectedShift" [options]="shiftOptions" [showClear]="true" placeholder="Select shift"></p-dropdown>
         </div>
-        <div class="to">
-          <label for="endDate">To</label>
-          <p-calendar [(ngModel)]="endDate" [showIcon]="true" >
-          </p-calendar>
+        <div class="flex flex-row">
+          <div class="from">
+            <label for="startDate">Date</label>
+            <p-calendar formControlName="startDate" dateFormat="dd/mm/yy" [showIcon]="true"></p-calendar>
+          </div>
+          <div class="to">
+            <label for="endDate">To</label>
+            <p-calendar formControlName="endDate" dateFormat="dd/mm/yy" [showIcon]="true"></p-calendar>
+          </div>
+        </div>
+        <div class="generate">
+          <button type="submit">
+            <i class="pi pi-copy"></i> Generate Report
+          </button>
         </div>
       </div>
-      <div class="generate">
-        <button (click)="generateReport()" [disabled]="!reportForm.valid">
-          <i class="pi pi-copy"></i> Generate Report
-        </button>
-      </div>
-    </div>
+    </form>
   </div>
 </div>
-

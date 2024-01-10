@@ -4,56 +4,57 @@
   justify-content: center;
   margin: 0;
   height: 100vh;
-  background-color: rgb(27,33,59);
+  background-color: #1b213b;
 
   .dateline{
     text-align: end;
-    color: white;
-    display: flex;
+    color: #fff;
     .longDate{
-      width: 61%;
-      text-align: end;
+      display: flex;
+      justify-content: center
+
     }
-    .shortTime{
-      width: 50%;
-      text-align: end;
-      padding: 0vw 1vw 10vw 6vw;
-    }
+    // .shortTime{
+    //   width: 50%;
+    //   text-align: end;
+    //   padding: 0vw 1vw 10vw 6vw;
+    // }
   }
 
   .report-container {
-    width: 60%;
-    height: auto;
-    max-width: 800px;
+    max-width: 69%;
     margin: auto;
-    border: 5px solid rgb(38, 45, 71);
-    background-color: rgb(38, 45, 71);
-    padding: 60px;
-    border-radius: 30px;
+    margin-top: 6vw;
+    border: 1vw solid;
+    border-color: #262d47;
+    background-color: #262d47;
+    padding: 6vw;
+    border-radius: 3vw;
     font-family: Arial, sans-serif;
-    color: white;
+    color: #fff;
     box-sizing: border-box;
     h2 {
       text-align: center;
-      margin-block-end: 70px;
-      margin-top: auto;
-      font-size: 28px;
+      margin-block-end: 5vw;
+      margin-top: -3vw;
+      font-size: 30px;
     }
 
     .filter-container {
-      display: grid;
       flex-direction: column;
-      margin-top: 40px;
-      margin-left: 30px;
+      margin-left: 9vw;
+      align-items: self-start;
 
       label {
         margin: 13px 6px 80px;
         font-size: larger;
       }
 
-      .justify-content-start{
-        width: 43%;
-        max-width: 52%;
+      .justify-content-center{
+        margin-right: 17.3vw;
+      }
+      .flex-row{
+        justify-content: center
       }
 
       .from{
@@ -65,16 +66,18 @@
       }
 
       button {
+
         background-color: #185ca5;
         color: #fff;
         cursor: pointer;
-        border-radius: 8px;
+        border-radius: 1vw;
         width: 40%;
-        padding: 2%;
+        padding: 2.2%;
         font-family: Arial, Helvetica, sans-serif;
+        margin-right: 10vw;
 
         &:hover {
-          background-color: #0056b3;
+          background-color: #185ca5;
         }
         i{
           font-size: 2cap;
@@ -93,15 +96,14 @@
 
 :host::ng-deep {
   p-dropdown, .p-dropdown{
-    width: 120%;
-    left: 5px;
-    height: 45px;
+    width: 15.6vw;
+    height: 48px;
 
   }
 
   p-calendar > .p-calendar > .p-datepicker-trigger {
-    background-color: white;
-    color: black;
+    background-color:#fff;
+    color: #1b213b;
     border: #fff;
   }
   p-calendar > .p-calendar > .p-inputtext {
@@ -110,7 +112,10 @@
   }
   p-calendar, .p-calendar {
     max-width: 100%;
-    width: 14vw;
+    width: 15.6vw;
     height: auto;
+  }
+  p-dropdown > div > span{
+    margin: auto;
   }
 }
